@@ -10,16 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MainFragment extends Fragment  implements TabLayout.OnTabSelectedListener {
+public class MainFragment extends Fragment implements TabLayout.OnTabSelectedListener {
     View view;
 
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private static ViewPager viewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view=LayoutInflater.from(getMyActivity()).inflate(R.layout.fragment_patrol,container,false);
-        tabLayout = (TabLayout)view. findViewById(R.id.tabLayoutwf);
+        view = LayoutInflater.from(getMyActivity()).inflate(R.layout.fragment_patrol, container, false);
+        tabLayout = (TabLayout) view.findViewById(R.id.tabLayoutwf);
         getMyActivity().getSupportActionBar().setTitle("Tickets");
         tabLayout.addTab(tabLayout.newTab().setText("Tab1"));
         tabLayout.addTab(tabLayout.newTab().setText("Tab2"));
@@ -28,9 +28,9 @@ public class MainFragment extends Fragment  implements TabLayout.OnTabSelectedLi
         tabLayout.setSelectedTabIndicatorColor(Color.WHITE);
         tabLayout.setSelectedTabIndicatorHeight(5);
 
-        viewPager = (ViewPager) view. findViewById(R.id.pagerwf);
+        viewPager = (ViewPager) view.findViewById(R.id.pagerwf);
 
-        TabAdapter adapter = new TabAdapter(getChildFragmentManager(), tabLayout.getTabCount(),getMyActivity());
+        TabAdapter adapter = new TabAdapter(getChildFragmentManager(), tabLayout.getTabCount(), getMyActivity());
 
         viewPager.setAdapter(adapter);
 
@@ -68,6 +68,14 @@ public class MainFragment extends Fragment  implements TabLayout.OnTabSelectedLi
         return view;
     }
 
+    public static void setFragment(MoviePojo pojo) {
+        viewPager.setCurrentItem(1, false);
+        FragmentTabTwo fragmentTabTwo = new FragmentTabTwo();
+        fragmentTabTwo.displayReceivedData(pojo);
+        DetailFragment detailFragment = new DetailFragment();
+        detailFragment.displayReceivedData(pojo);
+    }
+
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
@@ -93,4 +101,7 @@ public class MainFragment extends Fragment  implements TabLayout.OnTabSelectedLi
         super.onResume();
         getMyActivity().getSupportActionBar().setTitle("Tickets");
     }
+
+
+
 }

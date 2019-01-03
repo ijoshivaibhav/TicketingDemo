@@ -13,13 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.List;
 
-
-public class FragmentTabTwo extends Fragment {
-
+public class DetailFragment extends Fragment {
     static TextView name;
     static TextView rating;
     static TextView release;
@@ -33,7 +30,7 @@ public class FragmentTabTwo extends Fragment {
         // Inflate the layout for this fragment
         mContext = getActivity();
 
-        return inflater.inflate(R.layout.fragment_fragment_tab_two, container, false);
+        return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
     @Override
@@ -47,11 +44,12 @@ public class FragmentTabTwo extends Fragment {
         mContext = getActivity();
 
 
-
     }
 
-    public  void displayReceivedData(MoviePojo pojo) {
+    public void displayReceivedData(MoviePojo pojo) {
         try {
+
+
             String str = "";
             name.setText(pojo.getTitle());
             rating.setText(pojo.getRating());
@@ -60,22 +58,22 @@ public class FragmentTabTwo extends Fragment {
             for (int i = 0; i < list.size(); i++) {
                 str = str + list.get(i) + ",";
             }
-            if (str != null)
-                genres.setText(str.substring(0, str.length() - 1));
-
 //            Glide.with(getMyActivity())
 //                    .load(pojo.getImage())
 //                    .placeholder(R.drawable.ic_launcher_background)
 //                    .error(R.drawable.ic_launcher_background)
-//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
 //                    .into(poster);
+            if (str != null)
+                genres.setText(str.substring(0, str.length() - 1));
+
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
     }
 
-    public  MainActivity getMyActivity(){
+    public MainActivity getMyActivity() {
 
         return ((MainActivity) getActivity());
     }
+
 }
