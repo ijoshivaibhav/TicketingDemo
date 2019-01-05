@@ -1,4 +1,4 @@
-package com.example.vaibhav.ticketapp;
+package com.example.vaibhav.ticketapp.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

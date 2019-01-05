@@ -1,4 +1,4 @@
-package com.example.vaibhav.ticketapp;
+package com.example.vaibhav.ticketapp.fragments;
 
 
 import android.graphics.Color;
@@ -9,6 +9,11 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.vaibhav.ticketapp.models.MoviePojo;
+import com.example.vaibhav.ticketapp.R;
+import com.example.vaibhav.ticketapp.adapters.TabAdapter;
+import com.example.vaibhav.ticketapp.activities.MainActivity;
 
 public class MainFragment extends Fragment implements TabLayout.OnTabSelectedListener {
     View view;

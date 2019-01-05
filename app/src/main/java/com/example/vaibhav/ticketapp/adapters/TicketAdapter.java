@@ -1,4 +1,4 @@
-package com.example.vaibhav.ticketapp;
+package com.example.vaibhav.ticketapp.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.vaibhav.ticketapp.models.MoviePojo;
+import com.example.vaibhav.ticketapp.R;
 
 import java.util.List;
 

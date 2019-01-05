@@ -1,4 +1,4 @@
-package com.example.vaibhav.ticketapp;
+package com.example.vaibhav.ticketapp.fragments;
 
 
 import android.content.Context;
@@ -10,18 +10,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.example.vaibhav.ticketapp.models.MoviePojo;
+import com.example.vaibhav.ticketapp.R;
+import com.example.vaibhav.ticketapp.activities.MainActivity;
 
 import java.util.List;
 
 public class DetailFragment extends Fragment {
-    static TextView name;
-    static TextView rating;
-    static TextView release;
-    static TextView genres;
-    static ImageView poster;
+    public static TextView name;
+    public static TextView rating;
+    public static TextView release;
+    public static TextView genres;
+    public static LinearLayout ll_upper;
+    ImageView poster;
+
+   public static TextView label_1, label_2, label_3, label_4;
+
     Context mContext;
 
     @Override
@@ -40,6 +47,11 @@ public class DetailFragment extends Fragment {
         rating = (TextView) view.findViewById(R.id.rating);
         release = (TextView) view.findViewById(R.id.release);
         genres = (TextView) view.findViewById(R.id.genres);
+        label_1 = (TextView) view.findViewById(R.id.label_1);
+        label_2 = (TextView) view.findViewById(R.id.label_2);
+        label_3 = (TextView) view.findViewById(R.id.label_3);
+        label_4 = (TextView) view.findViewById(R.id.label_4);
+        ll_upper = (LinearLayout) view.findViewById(R.id.ll_upper);
         poster = (ImageView) view.findViewById(R.id.poster);
         mContext = getActivity();
 
@@ -48,9 +60,13 @@ public class DetailFragment extends Fragment {
 
     public void displayReceivedData(MoviePojo pojo) {
         try {
-
-
+            if (!ll_upper.isShown())
+            ll_upper.setVisibility(View.VISIBLE);
             String str = "";
+            label_1.setText("Movie Name :");
+            label_2.setText("Rating :");
+            label_3.setText("Release Year :");
+            label_4.setText("Genres :");
             name.setText(pojo.getTitle());
             rating.setText(pojo.getRating());
             release.setText(pojo.getReleaseYear());

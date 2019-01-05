@@ -1,12 +1,11 @@
-package com.example.vaibhav.ticketapp;
+package com.example.vaibhav.ticketapp.interfaces;
 
-import java.util.ArrayList;
+import com.example.vaibhav.ticketapp.models.MoviePojo;
+
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 
 public interface ApiInterface {
 

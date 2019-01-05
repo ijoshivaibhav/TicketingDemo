@@ -1,4 +1,4 @@
-package com.example.vaibhav.ticketapp;
+package com.example.vaibhav.ticketapp.fragments;
 
 
 import android.app.ProgressDialog;
@@ -11,6 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.example.vaibhav.ticketapp.interfaces.ApiInterface;
+import com.example.vaibhav.ticketapp.models.MoviePojo;
+import com.example.vaibhav.ticketapp.R;
+import com.example.vaibhav.ticketapp.adapters.TicketAdapter;
+import com.example.vaibhav.ticketapp.activities.MainActivity;
 
 import java.util.List;
 

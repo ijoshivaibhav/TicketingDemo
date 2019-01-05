@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginTop="55dp"
-    tools:context=".FragmentTabOne">
+    tools:context=".fragments.FragmentTabOne">
 
 <android.support.v7.widget.RecyclerView
     android:layout_marginTop="55dp"
